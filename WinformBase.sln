@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformBase", "WinformBase\WinformBase.csproj", "{B4E71F0F-D477-42D2-920F-03A343761583}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{36358A26-72E2-47D3-AADA-8772228DD025}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4E71F0F-D477-42D2-920F-03A343761583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4E71F0F-D477-42D2-920F-03A343761583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4E71F0F-D477-42D2-920F-03A343761583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4E71F0F-D477-42D2-920F-03A343761583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36358A26-72E2-47D3-AADA-8772228DD025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36358A26-72E2-47D3-AADA-8772228DD025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36358A26-72E2-47D3-AADA-8772228DD025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36358A26-72E2-47D3-AADA-8772228DD025}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {529B9C26-1209-4DFD-993C-E31F0E691B9E}
+	EndGlobalSection
+EndGlobal

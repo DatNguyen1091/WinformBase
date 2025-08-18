@@ -18,7 +18,6 @@ namespace BusinessLogic.Services
 
         static DepartmentService()
         {
-            // Initialize with data from DataDepartment
             _departments = DataDepartment.GetDepartments().ToList();
         }
 
@@ -31,19 +30,13 @@ namespace BusinessLogic.Services
                 // Apply search filter
                 if (!string.IsNullOrEmpty(request.Keyword))
                 {
-                    query = query.Where(d => 
-                        d.DeptName.IndexOf(request.Keyword, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                        d.Description.IndexOf(request.Keyword, StringComparison.OrdinalIgnoreCase) >= 0);
+                    query = query.Where(d => d.DeptName.IndexOf(request.Keyword, StringComparison.OrdinalIgnoreCase) >= 0 
+                                            || d.Description.IndexOf(request.Keyword, StringComparison.OrdinalIgnoreCase) >= 0);
                 }
 
                 var totalCount = query.Count();
-                var totalPages = (int)Math.Ceiling(totalCount / (double)request.PageSize);
 
-                // Apply pagination
-                var pagedData = query
-                    .Skip((request.PageNumber - 1) * request.PageSize)
-                    .Take(request.PageSize)
-                    .ToList();
+                var pagedData = query.Skip((request.PageNumber - 1) * request.PageSize).Take(request.PageSize).ToList();
 
                 // Convert to DTOs
                 var responseData = pagedData.Select(MapToResponse).ToList();
@@ -80,7 +73,6 @@ namespace BusinessLogic.Services
         {
             try
             {
-                // Validation
                 if (string.IsNullOrWhiteSpace(request.DeptName))
                 {
                     return Result.Fail("Department name is required");
@@ -96,9 +88,7 @@ namespace BusinessLogic.Services
                     return Result.Fail("Description cannot exceed 500 characters");
                 }
 
-                // Check for duplicate department name
-                if (_departments.Any(d => !d.IsDeleted && 
-                    d.DeptName.Equals(request.DeptName, StringComparison.OrdinalIgnoreCase)))
+                if (_departments.Any(d => !d.IsDeleted && d.DeptName.Equals(request.DeptName, StringComparison.OrdinalIgnoreCase)))
                 {
                     return Result.Fail("Department with this name already exists");
                 }
@@ -129,7 +119,6 @@ namespace BusinessLogic.Services
         {
             try
             {
-                // Validation
                 if (request.Id <= 0)
                 {
                     return Result.Fail("Invalid department ID");

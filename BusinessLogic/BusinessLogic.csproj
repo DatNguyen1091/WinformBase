@@ -64,5 +64,6 @@
     <Compile Include="Wrapper\PaginatedResult.cs" />
     <Compile Include="Wrapper\Result.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
